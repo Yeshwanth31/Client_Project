@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^2.0.22"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/index.js",
+    "client": "npm run start --prefix client",
+    "build": "npm run build --prefix client",
+    "build_init": "npm i && npm i --prefix client ",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2"
+  },
+  "name": "react-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
