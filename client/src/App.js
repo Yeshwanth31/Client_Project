@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React,{useState} from 'react';
+import LoginForm from './components/LoginForm';
+import Register from './components/Register';
+import Navbar from './components/navbar';
+import NotFound from './components/NotFound';
+import {Routes ,Route,BrowserRouter} from 'react-router-dom';
+import Homepage  from './components/Homepage';
+import Profile from './components/Profile.js';
+import Createpost from './components/Createpost';
 function App() {
+  const [user,setUser]=useState({name:"",email:"",loggedIn:false}); 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Navbar />
+        <Routes>
+          <Route path="/login" element={<LoginForm  user={user} setUser={setUser}/>} />
+          <Route path="/register" element={<Register user={user} setUser={setUser}/>} />
+          <Route path="/" element={<Homepage/>} />
+          <Route path="/profile" element={<Profile user={user} setUser={setUser}/>} />
+          <Route path="/createpost" element={<Createpost user={user} />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+     
     </div>
   );
 }
