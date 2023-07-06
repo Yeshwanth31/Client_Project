@@ -1,3 +1,2 @@
-# Client_Project
 
-![ERD](/client/public/images/ER.png)
+![ERD](/client/public/images/ER.jpeg)
