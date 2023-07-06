@@ -1,24 +1,39 @@
-import React from 'react'
-
+import React from "react";
+import { Link } from "react-router-dom";
 export default function navbar() {
   return (
     <div>
-        <nav class="navbar navbar-expand navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">My Website</a>
-  <div class="collapse navbar-collapse">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Profile</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Register</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+      <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <a className="navbar-brand" href="#">
+        <Link to="/" className="nav-link">
+                Assignment 5
+              </Link>
+        </a>
+        <div className="collapse navbar-collapse">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link to="/login" className="nav-link">
+                Login
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/register" className="nav-link">
+                Register
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/profile" className="nav-link">
+                Profile
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/createpost" className="nav-link">
+                Create Post
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
-  )
+  );
 }
