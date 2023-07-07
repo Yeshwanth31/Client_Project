@@ -1,4 +1,4 @@
-![ERD](/client/public/images/ER.jpeg)
+![ERD](/client/public/ER.jpeg)
 
 # Getting Started with Create React App
 
